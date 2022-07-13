@@ -1,6 +1,4 @@
-import { DefaultTheme } from 'styled-components';
-
-export const theme: DefaultTheme = {
+export default {
   colors: {
     primary: '#0060B1',
     secondary: '#FF6500',
@@ -32,13 +30,21 @@ export const theme: DefaultTheme = {
     },
   },
   spacings: {
-    none: '0.125rem',
-    xxs: '0.25rem',
-    xs: '0.5rem',
-    lg: '0.75rem',
-    xl: '0.875rem',
-    xlarge: '1rem',
-    xxlarge: '1.25rem',
-    xxxlarge: '1.5rem',
+    none: '0.125rem', //2px
+    xxs: '0.25rem', //4px
+    xs: '0.5rem', //8px
+    lg: '0.75rem', //12px
+    xl: '0.875rem', //14px
+    xlarge: '1rem', //16px
+    xxlarge: '1.25rem', //20px
+    xxxlarge: '1.5rem', //24px
+    xxxxlarge: '2rem', //32px
   },
-};
+  breakpoints: {
+    sm: '36rem', //576px
+    md: '48rem', //768x
+    lg: '62rem', //992px
+    xl: '75rem', //1200px
+    xxl: '162.5rem', //1400px
+  },
+} as const;
