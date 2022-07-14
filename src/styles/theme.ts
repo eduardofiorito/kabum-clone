@@ -8,6 +8,7 @@ export default {
     gray600: '#7F858D',
     gray700: '#565C69',
     gray800: '#42464D',
+    avatar: '#347bbe',
   },
   font: {
     family:
