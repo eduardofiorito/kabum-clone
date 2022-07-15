@@ -12,7 +12,7 @@ export const Input = styled.input`
     padding: ${theme.spacings.lg} ${theme.spacings.xxxxlarge}
       ${theme.spacings.lg} ${theme.spacings.xlarge};
     background: ${theme.colors.white};
-    color: ${theme.colors.gray600};
+    color: ${theme.colors.gray700};
     border-radius: ${theme.spacings.xxs};
     font-family: ${theme.font.family};
   `}
