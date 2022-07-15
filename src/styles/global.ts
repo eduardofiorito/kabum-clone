@@ -59,4 +59,11 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     background-color: inherit;
   }
+
+  /* focus */
+  :focus-visible {
+    outline: 2px auto ${({ theme }) => theme.colors.black};
+    border-radius: ${({ theme }) => theme.spacings.xxs};
+    outline-offset: 1px
+  }
 `;

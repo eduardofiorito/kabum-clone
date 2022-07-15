@@ -13,6 +13,7 @@ export default {
     secondary600: '#F56200',
     secondary700: '#F56200',
     white: '#fff',
+    black: '#000',
     gray100: '#FAFAFB',
     gray200: '#F2F3F4',
     gray600: '#7F858D',
