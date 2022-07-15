@@ -9,9 +9,5 @@ export function Avatar({
   src = 'assets/avatar-default.svg',
   alt = 'Avatar',
 }: AvatarProps) {
-  return (
-    <>
-      <S.Avatar src={src} alt={alt} />
-    </>
-  );
+  return <S.Avatar src={src} alt={alt} />;
 }
