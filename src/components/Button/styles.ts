@@ -29,7 +29,7 @@ const variantModifier = {
     color: ${theme.colors.white};
 
     &:hover {
-      background: ${theme.colors.secondary600};
+      background: ${theme.colors.secondary700};
     }
   `,
 };
@@ -42,6 +42,7 @@ export const Button = styled.button<ButtonSProps>`
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  transition: background ease-in 0.3s;
 
   ${({ theme, size, variant }) => css`
     font-family: ${theme.font.family};
