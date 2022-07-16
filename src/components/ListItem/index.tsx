@@ -1,7 +1,7 @@
 import * as S from './styles';
 
 import { User as UserIcon } from '@styled-icons/boxicons-solid/User';
-import { Heart as HeartIcon } from '@styled-icons/boxicons-solid/Heart';
+import { Favorite as FavoriteIcon } from '@styled-icons/material/Favorite';
 import { ShoppingBasket as ShoppingIcon } from '@styled-icons/material/ShoppingBasket';
 import { Category as CategoryIcon } from '@styled-icons/boxicons-solid/Category';
 import { TargetLock as TargetIcon } from '@styled-icons/boxicons-regular/TargetLock';
@@ -32,7 +32,7 @@ export type ListItemProps = {
 export function ListItem({ link, icon, text }: ListItemProps) {
   const iconModifier = {
     user: <UserIcon />,
-    heart: <HeartIcon />,
+    heart: <FavoriteIcon />,
     shopping: <ShoppingIcon />,
     category: <CategoryIcon />,
     target: <TargetIcon />,

@@ -12,10 +12,12 @@ export default {
     secondary500: '#F56200',
     secondary600: '#F56200',
     secondary700: '#F56200',
+    secondary800: '#E35214',
     white: '#fff',
     black: '#000',
     gray100: '#FAFAFB',
     gray200: '#F2F3F4',
+    gray300: '#DEE0E4',
     gray600: '#7F858D',
     gray700: '#565C69',
     gray800: '#42464D',
@@ -26,6 +28,7 @@ export default {
     family:
       "'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
     sizes: {
+      xxs: '0.625rem', //10px
       xs: '0.75rem', //12px
       sm: '0.875rem', //14px
       base: '1rem', //16px
@@ -56,11 +59,14 @@ export default {
     xxxxlarge: '2rem', //32px
   },
   breakpoints: {
+    xsm: '22.5rem', //360px
     sm: '36rem', //576px
     md: '48rem', //768x
     lg: '62rem', //992px
     xl: '75rem', //1200px
     xxl: '162.5rem', //1400px
-    cm1: '64rem', //1024px
+    cm1: '66.875rem', //1040px
+    cm2: '79.25rem', //1270px
   },
+  container: '75.625rem', //1210px
 } as const;

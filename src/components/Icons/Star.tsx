@@ -12,6 +12,8 @@ export function Star({ width = 28, height = 28 }: StarProps) {
       fill="none"
       className="IconPrimeStar"
       viewBox="0 0 16 16"
+      aria-hidden="true"
+      focusable="false"
     >
       <path
         fill="#fff"

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import * as S from './styles';
 
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search';
+import { SearchCustomIcon } from 'components/Icons/SearchCustomIcon';
 
 type SearchProps = {
   ariaLabel?: string;
@@ -10,6 +11,7 @@ type SearchProps = {
   minCharacters?: number;
   maxCharacters?: number;
   haveButton?: boolean;
+  isAuthenticated: boolean;
 };
 
 export function Search({
@@ -18,6 +20,7 @@ export function Search({
   minCharacters = 2,
   maxCharacters = 200,
   haveButton = true,
+  isAuthenticated,
 }: SearchProps) {
   const [input, setInput] = useState('');
 
@@ -32,7 +35,7 @@ export function Search({
   };
 
   return (
-    <S.Form onSubmit={handleSubmit}>
+    <S.Form onSubmit={handleSubmit} role="search">
       <S.Input
         autoComplete="off"
         type="text"
@@ -44,9 +47,25 @@ export function Search({
         onChange={handleInput}
         value={input}
       />
+
+      {!isAuthenticated && (
+        <S.List>
+          <S.ListItem>
+            <S.ListLink href="/">Playstation 5</S.ListLink>
+          </S.ListItem>
+          <S.ListItem>
+            <S.ListLink href="/">i9 extreme</S.ListLink>
+          </S.ListItem>
+          <S.ListItem>
+            <S.ListLink href="/">Gtx 3090</S.ListLink>
+          </S.ListItem>
+        </S.List>
+      )}
+
       {haveButton && (
         <S.Button type="submit" aria-label="Buscar">
           <SearchIcon />
+          <SearchCustomIcon />
         </S.Button>
       )}
     </S.Form>

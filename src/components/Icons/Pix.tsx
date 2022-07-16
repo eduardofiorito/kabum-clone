@@ -12,6 +12,8 @@ export function Pix({ width, height }: PixProps) {
       fill="none"
       className="IconPixMenu"
       viewBox="0 0 16 16"
+      aria-hidden="true"
+      focusable="false"
     >
       <path
         fill="#FFF"
