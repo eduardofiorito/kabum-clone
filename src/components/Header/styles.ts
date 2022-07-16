@@ -12,8 +12,12 @@ export const Container = styled.div`
   ${({ theme }) => css`
     margin: 0 auto;
     max-width: ${theme.container};
-    padding: 0 1rem;
+    padding: 0 ${theme.spacings.lg};
     box-sizing: content-box;
+
+    @media (min-width: ${theme.breakpoints.sm}) {
+      padding: 0 ${theme.spacings.xlarge};
+    }
   `}
 `;
 
@@ -244,6 +248,7 @@ export const Shipping = styled.div<ShippingSProps>`
 
     @media (min-width: ${theme.breakpoints.sm}) {
       justify-content: flex-start;
+      padding: ${theme.spacings.lg} ${theme.spacings.xlarge};
     }
 
     @media (min-width: ${theme.breakpoints.cm1}) {

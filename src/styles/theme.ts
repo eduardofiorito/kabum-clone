@@ -23,6 +23,7 @@ export default {
     gray800: '#42464D',
     avatar: '#347bbe',
     overlay: 'rgba(0, 0, 0, 0.8)',
+    background: '#022448',
   },
   font: {
     family:

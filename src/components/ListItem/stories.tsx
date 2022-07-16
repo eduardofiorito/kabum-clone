@@ -4,11 +4,6 @@ import { ListItem } from '.';
 export default {
   title: 'Components/ListItem',
   component: ListItem,
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-    },
-  },
 } as ComponentMeta<typeof ListItem>;
 
 const Template: ComponentStory<typeof ListItem> = (args) => (

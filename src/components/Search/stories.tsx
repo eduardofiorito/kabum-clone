@@ -25,15 +25,3 @@ WithoutButton.args = {
   placeholder: 'Busque aqui',
   haveButton: false,
 };
-
-Default.parameters = {
-  backgrounds: {
-    default: 'dark',
-  },
-};
-
-WithoutButton.parameters = {
-  backgrounds: {
-    default: 'dark',
-  },
-};
