@@ -8,6 +8,12 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+  *:focus-visible {
+    outline: 2px solid black;
+    border-radius: 0;
+  }
+
   }
 
   html, body, div, span, applet, object, iframe,
@@ -29,6 +35,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
 }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
@@ -54,5 +61,9 @@ export const GlobalStyle = createGlobalStyle`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+  button {
+    cursor: pointer;
+    background-color: inherit;
   }
 `;
