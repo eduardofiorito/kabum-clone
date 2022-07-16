@@ -9,7 +9,7 @@ export type ButtonProps = {
   variant: 'primary' | 'secondary';
   size: 'small' | 'large';
   icon?: JSX.Element;
-  as?: React.ElementType;
+  as?: 'a' | 'button';
 } & ButtonLinkTypes;
 
 export function Button({
@@ -21,7 +21,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <S.Button variant={variant} size={size} {...props}>
-      {icon}
+      {!!icon && icon}
       {children}
     </S.Button>
   );

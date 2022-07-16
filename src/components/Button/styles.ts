@@ -43,13 +43,21 @@ export const Button = styled.button<ButtonSProps>`
   align-items: center;
   text-decoration: none;
   transition: background ease-in 0.3s;
+  width: 100%;
 
   ${({ theme, size, variant }) => css`
     font-family: ${theme.font.family};
     border-radius: ${theme.spacings.xxs};
     gap: ${theme.spacings.xs};
+    padding: ${theme.spacings.xs};
 
     ${!!size && sizeModifier[size](theme)};
     ${!!size && variantModifier[variant](theme)};
+
+    span {
+      display: flex;
+      width: ${size === 'small' ? '1rem' : '1.25rem'};
+      height: ${size === 'small' ? '1rem' : '1.25rem'};
+    }
   `}
 `;
