@@ -23,7 +23,7 @@ export default {
     gray800: '#42464D',
     avatar: '#347bbe',
     overlay: 'rgba(0, 0, 0, 0.8)',
-    background: '#022448',
+    background: '#032043',
   },
   font: {
     family:
@@ -70,4 +70,5 @@ export default {
     cm2: '79.25rem', //1270px
   },
   container: '75.625rem', //1210px
+  container2: '85rem', //1360px
 } as const;
