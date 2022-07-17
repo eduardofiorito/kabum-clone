@@ -23,8 +23,9 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/components/Button/Button.stories.tsx"  ],
+    "**/*.tsx",
+    "src/utils/number.js"
+, "src/utils/product.js"  ],
   "exclude": [
     "node_modules"
   ]

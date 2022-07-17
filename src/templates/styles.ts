@@ -43,8 +43,14 @@ export const SectionTitle = styled.h1`
 export const CarouselWrapper = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.gray100};
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    padding: ${theme.spacings.xxxlarge} ${theme.spacings.xlarge} 4.5rem;
 
-    height: 15rem;
+    @media (min-width: ${theme.breakpoints.cm1}) {
+      padding: ${theme.spacings.xxxxlarge} ${theme.spacings.xlarge} 4.5rem;
+    }
   `}
 `;
 
