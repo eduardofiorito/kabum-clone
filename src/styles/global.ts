@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 
   *:focus-visible {
     outline: 2px solid black;
+    outline-offset: 0;
     border-radius: 0;
   }
 
