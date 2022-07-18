@@ -15,32 +15,35 @@ import { Notifications as NotificationsIcon } from 'components/Icons/Notificatio
 import { Menu } from 'components/Menu';
 import { Avatar } from 'components/Avatar';
 
-type HeaderProps = {
-  name?: string;
-  adress?: string;
-  isAuthenticated?: boolean;
-  avatar?: {
-    src: string;
-    alt: string;
+export type HeaderProps = {
+  isAuthenticated: boolean;
+  user: {
+    name: string;
+    adress: string;
+    avatar: {
+      src: string;
+      alt: string;
+    };
   };
+  departments: {
+    id: string;
+    name: string;
+    link: string;
+  }[];
 };
 
-export function Header({
-  name = 'Luis Henrique',
-  adress = 'Rua das Hortências, 295 - Boa Vista - Limeira SP',
-  isAuthenticated = true,
-  avatar = {
-    src: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=36&q=80',
-    alt: '',
-  },
-}: HeaderProps) {
+export function Header({ isAuthenticated, user, departments }: HeaderProps) {
   const [isShown, setIsShown] = useState(false);
 
   return (
     <S.Header>
       <S.Container>
         <S.Wrapper>
-          <Menu isAuthenticated={isAuthenticated} />
+          <Menu
+            username={user.name}
+            avatar={user.avatar}
+            isAuthenticated={isAuthenticated}
+          />
 
           <LogoLink />
 
@@ -50,7 +53,7 @@ export function Header({
               <S.Shipping hideOnMobo={true}>
                 <S.Content>
                   <span>Enviar para: </span>
-                  {adress}
+                  {user.adress}
                 </S.Content>
                 <S.ArrowRightIconWrapper>
                   <ArrowRightIcon />
@@ -61,14 +64,14 @@ export function Header({
 
           <S.User>
             {isAuthenticated ? (
-              <Avatar src={avatar.src} alt={avatar.alt} />
+              <Avatar src={user.avatar.src} alt={user.avatar.alt} />
             ) : (
               <Avatar />
             )}
 
             <S.UserContent>
               {isAuthenticated ? (
-                <S.Username>Olá {name}</S.Username>
+                <S.Username>Olá {user.name}</S.Username>
               ) : (
                 <div>
                   Faça <S.LinkPrimary href="/">Login</S.LinkPrimary> ou
@@ -140,54 +143,17 @@ export function Header({
                     {isShown && (
                       <S.Dropdown id="dropdown">
                         <S.DropdownList>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 1
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 2
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 3
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 4
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 5
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 6
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
+                          {departments &&
+                            departments.map((department) => (
+                              <li key={department.id}>
+                                <S.DropdownLink href={department.link}>
+                                  {department.name}
+                                  <span>
+                                    <ArrowRightIcon />
+                                  </span>
+                                </S.DropdownLink>
+                              </li>
+                            ))}
                         </S.DropdownList>
                       </S.Dropdown>
                     )}
@@ -212,7 +178,7 @@ export function Header({
           </S.LocationIconWrapper>
           <S.Content>
             <span>Enviar para: </span>
-            {adress}
+            {user.adress}
           </S.Content>
           <S.ArrowRightIconWrapper>
             <ArrowRightIcon />

@@ -9,8 +9,9 @@ export const Link = styled.a`
     flex-direction: column;
     text-decoration: none;
     overflow: hidden;
-    max-width: 22rem;
     transition: filter ease-in 0.2s;
+    width: 100%;
+    max-width: 31.25rem;
 
     &:hover {
       box-shadow: rgb(40 41 61 / 4%) 0px 4px 8px,

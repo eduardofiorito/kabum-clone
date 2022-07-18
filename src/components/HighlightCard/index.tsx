@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-type HighlightCardProps = {
+export type HighlightCardProps = {
   link: string;
   title: string;
   description: string;

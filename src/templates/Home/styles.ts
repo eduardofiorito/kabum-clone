@@ -75,7 +75,7 @@ export const Date = styled.span`
   `}
 `;
 
-export const CarouselWrapper = styled.div`
+export const CarouselWrapper = styled.section`
   ${({ theme }) => css`
     overflow: hidden;
     padding: ${theme.spacings.xxxlarge} ${theme.spacings.xlarge};
@@ -95,17 +95,26 @@ export const HighlightWrapper = styled.section`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
       gap: 1rem;
+      align-items: center;
     }
 
     @media (min-width: ${theme.breakpoints.cm1}) {
-      padding: ${theme.spacings.xxxxlarge} ${theme.spacings.xlarge} 4.5rem;
+      padding: ${theme.spacings.xxxxlarge} 4.5rem 4.5rem;
 
       ul {
         flex-direction: row;
         gap: ${theme.spacings.xxxxlarge};
         justify-content: center;
+      }
+    }
+
+    li {
+      width: 100%;
+      max-width: 31.25rem;
+
+      @media (min-width: ${theme.breakpoints.cm1}) {
+        max-width: 24rem;
       }
     }
   `}

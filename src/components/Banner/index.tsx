@@ -1,9 +1,9 @@
 import * as S from './styles';
 
-type BannerProps = {
-  link?: string;
-  alt?: string;
-  srcSet?: {
+export type BannerProps = {
+  link: string;
+  alt: string;
+  srcSet: {
     xs: string;
     md: string;
     lg: string;
@@ -12,17 +12,7 @@ type BannerProps = {
   };
 };
 
-export function Banner({
-  link = '/',
-  alt = 'Quinzema atômica, são quinze dias de descontos arrasadores. Até 47% de desconto. Aproveite.',
-  srcSet = {
-    xs: 'assets/banner360-min.jpg',
-    md: 'assets/banner768-min.jpg',
-    lg: 'assets/banner1024-min.jpg',
-    xxl: 'assets/banner1400-min.jpg',
-    full: 'assets/banner1920-min.jpg',
-  },
-}: BannerProps) {
+export function Banner({ link, alt, srcSet }: BannerProps) {
   return (
     <S.BannerLink href={link} title={alt}>
       <img
