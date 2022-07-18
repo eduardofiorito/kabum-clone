@@ -19,5 +19,5 @@ Default.args = {
 };
 
 Default.parameters = {
-  backgrounds: { default: 'light', layout: 'fullscreen' },
+  backgrounds: { default: 'light' },
 };

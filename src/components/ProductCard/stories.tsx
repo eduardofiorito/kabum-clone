@@ -4,6 +4,9 @@ import { ProductCard } from '.';
 export default {
   title: 'Components/ProductCard',
   component: ProductCard,
+  parameters: {
+    backgrounds: { default: 'light' },
+  },
 } as ComponentMeta<typeof ProductCard>;
 
 const Template: ComponentStory<typeof ProductCard> = (args) => (

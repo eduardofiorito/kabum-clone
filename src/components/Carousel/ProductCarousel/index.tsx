@@ -14,29 +14,30 @@ const settings: Settings = {
   infinite: false,
   responsive: [
     {
-      breakpoint: 1200,
+      breakpoint: 1360,
       settings: {
         arrows: true,
-        slidesToShow: 5.1,
+        slidesToShow: 4.7,
         draggable: false,
       },
     },
     {
-      breakpoint: 1070,
+      breakpoint: 1258,
       settings: {
-        arrows: false,
-        slidesToShow: 3.2,
+        arrows: true,
+        slidesToShow: 4.1,
         draggable: false,
       },
     },
     {
-      breakpoint: 1024,
+      breakpoint: 1069,
       settings: {
         arrows: false,
+        slidesToShow: 3.6,
         draggable: true,
-        slidesToShow: 3,
       },
     },
+
     {
       breakpoint: 950,
       settings: {
