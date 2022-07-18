@@ -2,13 +2,12 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    width: 18.125rem;
+    width: 100%;
     height: 13.625rem;
     background: ${theme.colors.white};
     padding: ${theme.spacings.xs};
     position: relative;
-    border-radius: ${theme.spacings.xxs};
-    transition: box-shadow 200ms ease 0s;
+    overflow: hidden;
     box-shadow: rgb(40 41 61 / 8%) 0px 0px 1px,
       rgb(96 97 112 / 16%) 0px 0.5px 2px;
 
@@ -17,22 +16,33 @@ export const Wrapper = styled.div`
       height: 25rem;
       padding: 0;
     }
+  `}
+`;
+
+export const Link = styled.a`
+  ${({ theme }) => css`
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+    transition: box-shadow 200ms ease 0s;
 
     &:hover {
       box-shadow: rgb(40 41 61 / 4%) 0px 4px 8px,
         rgb(96 97 112 / 16%) 0px 8px 16px;
     }
+
+    &:focus-visible {
+      outline: none;
+      border: 2px solid ${theme.colors.black};
+    }
   `}
-`;
-
-export const Link = styled.a`
-  position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 0;
-
-  z-index: 1;
 `;
 
 export const Content = styled.div`
@@ -157,7 +167,7 @@ export const Manufacturer = styled.div`
   `}
 `;
 
-export const ProductName = styled.span`
+export const ProductName = styled.h2`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.xs};
     line-height: ${theme.font.sizes.base};
@@ -270,6 +280,11 @@ export const Footer = styled.footer<CartProps>`
         background: ${theme.colors.secondary800};
         border: 2px solid ${theme.colors.secondary800};
         color: ${theme.colors.white};
+      }
+
+      &:focus-visible {
+        outline: none;
+        border: 2px solid ${theme.colors.black};
       }
     }
   `}

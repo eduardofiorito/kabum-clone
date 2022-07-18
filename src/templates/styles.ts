@@ -12,6 +12,11 @@ export const SectionHeader = styled.header`
   ${({ theme }) => css`
     background: ${theme.colors.secondary};
     padding: ${theme.spacings.xlarge};
+    color: ${theme.colors.white};
+    display: flex;
+    gap: ${theme.spacings.xs};
+    align-items: center;
+    justify-content: space-between;
 
     @media (min-width: ${theme.container2}) {
       padding: 1.125rem 4.5rem;
@@ -26,7 +31,7 @@ export const SectionTitle = styled.h1`
 
     font-weight: ${theme.font.weight.extraBold};
     text-transform: uppercase;
-    color: ${theme.colors.white};
+    color: inherit;
 
     @media (min-width: ${theme.breakpoints.cm1}) {
       font-size: ${theme.font.sizes.xl};
@@ -40,21 +45,49 @@ export const SectionTitle = styled.h1`
   `}
 `;
 
-export const CarouselWrapper = styled.div`
+export const EndsIn = styled.span`
   ${({ theme }) => css`
-    background: ${theme.colors.gray100};
-    display: flex;
-    gap: 1rem;
-    overflow: hidden;
-    padding: ${theme.spacings.xxxlarge} ${theme.spacings.xlarge} 4.5rem;
+    display: none;
 
     @media (min-width: ${theme.breakpoints.cm1}) {
-      padding: ${theme.spacings.xxxxlarge} ${theme.spacings.xlarge} 4.5rem;
+      font-weight: ${theme.font.weight.bold};
+      font-size: ${theme.font.sizes.base};
+      color: inherit;
+      display: block;
+      line-height: 1.75rem;
+      text-transform: uppercase;
+      margin-left: auto;
     }
   `}
 `;
 
-export const HighlightWrapper = styled.div`
+export const Date = styled.span`
+  ${({ theme }) => css`
+    color: inherit;
+    font-size: ${theme.font.sizes.sm};
+    line-height: 1rem;
+    font-weight: ${theme.font.weight.bold};
+    text-transform: uppercase;
+
+    @media (min-width: ${theme.breakpoints.cm1}) {
+      font-size: ${theme.font.sizes.xxl};
+    }
+  `}
+`;
+
+export const CarouselWrapper = styled.div`
+  ${({ theme }) => css`
+    overflow: hidden;
+    padding: ${theme.spacings.xxxlarge} ${theme.spacings.xlarge};
+    background: ${theme.colors.gray200};
+
+    @media (min-width: ${theme.breakpoints.cm1}) {
+      padding: ${theme.spacings.xxxxlarge} 3.25rem 3.25rem;
+    }
+  `}
+`;
+
+export const HighlightWrapper = styled.section`
   ${({ theme }) => css`
     padding: ${theme.spacings.xxxlarge} ${theme.spacings.xlarge};
 

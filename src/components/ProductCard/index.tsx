@@ -14,9 +14,9 @@ import { Box } from 'components/Icons/Box';
 
 import { handlePrice } from 'utils/product';
 
-type ProductCardProps = {
+export type ProductCardProps = {
   link: string;
-  evaluation?: 0 | 1 | 2 | 3 | 4 | 5;
+  evaluation?: 0 | 1 | 2 | 3 | 4 | 5 | number;
   imgSrc: string;
   manufacturer: string;
   name: string;

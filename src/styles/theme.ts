@@ -66,7 +66,7 @@ export default {
     lg: '62rem', //992px
     xl: '75rem', //1200px
     xxl: '162.5rem', //1400px
-    cm1: '66.875rem', //1040px
+    cm1: '66.875rem', //1070px
     cm2: '79.25rem', //1270px
   },
   container: '75.625rem', //1210px
