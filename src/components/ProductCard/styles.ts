@@ -8,8 +8,19 @@ export const Wrapper = styled.div`
     padding: ${theme.spacings.xs};
     position: relative;
     overflow: hidden;
+    transition: box-shadow 200ms ease 0s;
     box-shadow: rgb(40 41 61 / 8%) 0px 0px 1px,
       rgb(96 97 112 / 16%) 0px 0.5px 2px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    &:hover {
+      box-shadow: rgb(40 41 61 / 4%) 0px 4px 8px,
+        rgb(96 97 112 / 16%) 0px 8px 16px;
+    }
 
     @media (min-width: ${theme.breakpoints.cm1}) {
       width: 13.375rem;
@@ -22,34 +33,17 @@ export const Wrapper = styled.div`
 export const Link = styled.a`
   ${({ theme }) => css`
     position: absolute;
-    display: block;
-    top: 0;
-    bottom: 0;
+    top: 2.75rem;
+    bottom: 2.75rem;
     left: 0;
     right: 0;
     width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: block;
-    transition: box-shadow 200ms ease 0s;
-
-    &:hover {
-      box-shadow: rgb(40 41 61 / 4%) 0px 4px 8px,
-        rgb(96 97 112 / 16%) 0px 8px 16px;
-    }
 
     &:focus-visible {
       outline: none;
       border: 2px solid ${theme.colors.black};
     }
   `}
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
 `;
 
 export const Header = styled.div`
@@ -267,21 +261,22 @@ type CartProps = {
 };
 
 export const Footer = styled.footer<CartProps>`
-  margin-top: auto;
-  z-index: 2;
-
   ${({ theme, cart }) => css`
+    margin-top: ${({ theme }) => theme.spacings.xlarge};
+    z-index: 2;
+
+    @media (min-width: ${theme.breakpoints.cm1}) {
+      margin-top: 0;
+    }
+
     button {
       background: ${cart ? theme.colors.secondary : theme.colors.white};
       color: ${cart ? theme.colors.white : theme.colors.secondary};
       border: 2px solid ${theme.colors.secondary};
 
       &:hover {
-        background: ${theme.colors.secondary800};
-        border: 2px solid ${theme.colors.secondary800};
         color: ${theme.colors.white};
       }
-
       &:focus-visible {
         outline: none;
         border: 2px solid ${theme.colors.black};

@@ -24,7 +24,7 @@ const settings: Settings = {
     {
       breakpoint: 1070,
       settings: {
-        arrows: true,
+        arrows: false,
         slidesToShow: 3.2,
         draggable: false,
       },

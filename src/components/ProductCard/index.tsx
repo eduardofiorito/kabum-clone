@@ -57,65 +57,64 @@ export function ProductCard({
 
   return (
     <S.Wrapper>
+      <S.Header>
+        {!!evaluation && <S.Stars>{handleEvaluation(evaluation)}</S.Stars>}
+        <S.Evaluation>{evaluation}</S.Evaluation>
+        <S.FavoriteButton
+          onClick={() => setFavorite(!favorite)}
+          aria-label={
+            !favorite
+              ? 'Adicionar a lista de desejos'
+              : 'Remover da lista de desejos'
+          }
+          aria-pressed={favorite ? true : false}
+          type="button"
+          favorite={favorite}
+        >
+          {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+        </S.FavoriteButton>
+      </S.Header>
       <S.Link href={link}>
         <SrOnly content={screenReaderDescription} />
       </S.Link>
-      <S.Content>
-        <S.Header>
-          {!!evaluation && <S.Stars>{handleEvaluation(evaluation)}</S.Stars>}
-          <S.Evaluation>{evaluation}</S.Evaluation>
-          <S.FavoriteButton
-            onClick={() => setFavorite(!favorite)}
-            aria-label={
-              !favorite
-                ? 'Adicionar a lista de desejos'
-                : 'Remover da lista de desejos'
-            }
-            aria-pressed={favorite ? true : false}
-            type="button"
-            favorite={favorite}
-          >
-            {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
-          </S.FavoriteButton>
-        </S.Header>
-        <S.Main>
-          <S.Image src={imgSrc} alt="" />
+      <S.Main>
+        <S.Image src={imgSrc} alt="" />
 
-          <S.Info>
-            <S.Manufacturer>{manufacturer}</S.Manufacturer>
-            <S.ProductName>{name}</S.ProductName>
-            <S.OldPrice>R$ {handlePrice(oldPrice)}</S.OldPrice>
-            <S.Price>R$ {handlePrice(price)}</S.Price>
-            <S.Pix>À vista no pix</S.Pix>
-            {freeShipping || openBox ? (
-              <S.Tags>
-                {freeShipping && (
-                  <S.Tag>
-                    <TruckIcon size={12} /> Frete grátis
-                  </S.Tag>
-                )}
-                {openBox && (
-                  <S.Tag>
-                    <Box size={12} /> Open box
-                  </S.Tag>
-                )}
-              </S.Tags>
-            ) : null}
-          </S.Info>
-        </S.Main>
-        <S.Footer cart={cart}>
-          <Button
-            onClick={() => setCart(!cart)}
-            aria-label={!cart ? 'Adicionar ao carrinho' : 'Remover do carrinho'}
-            aria-pressed={cart ? true : false}
-            variant="secondary"
-            size="small"
-            icon={<ShoppingCartIcon size={20} />}
-          >
-            Comprar
-          </Button>
-        </S.Footer>
-      </S.Content>
+        <S.Info>
+          <S.Manufacturer>{manufacturer}</S.Manufacturer>
+          <S.ProductName>{name}</S.ProductName>
+          <S.OldPrice>R$ {handlePrice(oldPrice)}</S.OldPrice>
+          <S.Price>R$ {handlePrice(price)}</S.Price>
+          <S.Pix>À vista no pix</S.Pix>
+          {freeShipping || openBox ? (
+            <S.Tags>
+              {freeShipping && (
+                <S.Tag>
+                  <TruckIcon size={12} /> Frete grátis
+                </S.Tag>
+              )}
+              {openBox && (
+                <S.Tag>
+                  <Box size={12} /> Open box
+                </S.Tag>
+              )}
+            </S.Tags>
+          ) : null}
+        </S.Info>
+      </S.Main>
+      <S.Footer cart={cart}>
+        <Button
+          onClick={() => setCart(!cart)}
+          aria-label={!cart ? 'Adicionar ao carrinho' : 'Remover do carrinho'}
+          aria-pressed={cart ? true : false}
+          variant="secondary"
+          size="small"
+          type="button"
+          icon={<ShoppingCartIcon size={20} />}
+        >
+          Comprar
+        </Button>
+      </S.Footer>
     </S.Wrapper>
   );
 }
