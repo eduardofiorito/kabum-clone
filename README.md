@@ -66,9 +66,9 @@ Foram utilizadas as seguintes tecnologias:
 
 ```bash
 # Clonando o projeto
-$ git clone https://github.com/eduardofiorito/kabum-frontend-test.git
+$ git clone https://github.com/eduardofiorito/kabum-clone.git
 # Entrando no diretório
-$ cd kabum-frontend-test
+$ cd kabum-clone
 # Instalando as dependências
 $ yarn
 # ou
@@ -102,7 +102,7 @@ $ npm run dev
 
 ## 📖 Storybook
 - O Storybook permite a visualização e teste de todos os componentes, com suas respectivas variações, tema claro ou escuro, tamanho de tela mobile, table, fullscreen, etc
-- Você pode testar em [Storybook Kabum](https://github.com/eduardofiorito/kabum-storybook)
+- Você pode testar em [Storybook Kabum](https://kabum-storybook.vercel.app/)
 
 ## 📊 Testes
 
