@@ -59,9 +59,12 @@ export function HomeTemplate({
         <S.Section>
           <S.SectionHeader>
             <S.SectionTitle>{mainSection.title}</S.SectionTitle>
-            <S.EndsIn>Termina em:</S.EndsIn>
-            <Timer size={22} />
-            <S.Date>{mainSection.date}</S.Date>
+
+            <S.TimeWrapper>
+              <S.EndsIn>Termina em:</S.EndsIn>
+              <Timer size={22} />
+              <S.Date>{mainSection.date}</S.Date>
+            </S.TimeWrapper>
           </S.SectionHeader>
 
           <S.CarouselWrapper aria-label={productsSection.label}>

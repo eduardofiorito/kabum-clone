@@ -14,7 +14,6 @@ export const SectionHeader = styled.header`
     padding: ${theme.spacings.xlarge};
     color: ${theme.colors.white};
     display: flex;
-    gap: ${theme.spacings.xs};
     align-items: center;
     justify-content: space-between;
 
@@ -56,8 +55,15 @@ export const EndsIn = styled.span`
       display: block;
       line-height: 1.75rem;
       text-transform: uppercase;
-      margin-left: auto;
     }
+  `}
+`;
+
+export const TimeWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: ${theme.spacings.xs};
   `}
 `;
 
