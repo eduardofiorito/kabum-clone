@@ -1,5 +1,9 @@
-<h1 align="center"><img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658216725/kabum/kabumlogo_uzu7z5.svg" alt="Kabum" /></h1>
+<h1 align="center"><img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658216725/kabum/kabumlogo_uzu7z5.svg" alt="Kabum" /> 
+</h1>
 
+<p align="center">
+  Você pode testar em <a href="https://kabum-clone-kxoznprz0-eduardofiorito.vercel.app/">Kabum Clone</a>
+</p>
 
 <p align="center">
   <img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658219013/kabum/mockup_imjn4u.png" alt="Mockup Kabum" />
@@ -12,7 +16,7 @@
 - Layout base do projeto: [Figma-base](https://www.figma.com/file/XQ1KqEcyYtdw0GRcu4MkPf/kabum-home?node-id=0%3A1)
   - Para construir o responsivo foi criado um rascunho no [Figma](https://www.figma.com/file/fFqF4S10zZvJZqjqlcIXaR/Kabum-Home-(Rascunho)?node-id=0%3A1)
 - Os componentes da aplicação foram documentados e testados com Storybook
-- O projeto foi orgazinado utilizado um template de TodoList do [Notion](https://silken-message-5cf.notion.site/f6fbdfef9b654d1395f1d274c379674f?v=7ef50b80b1024434829c06a2415cf0a0)
+- As etapas de desenvolvimento seguiram um template de TodoList do [Notion](https://silken-message-5cf.notion.site/f6fbdfef9b654d1395f1d274c379674f?v=7ef50b80b1024434829c06a2415cf0a0)
 
 ## ✨ Tecnologias
 
@@ -88,12 +92,17 @@ $ npm run dev
 
 
 ## 📱 Responsivo
+
 - O projeto foi construido pensando em vários tamanhos de dispositivos;
 - No componente Banner foram utilizados os atributos `srcSet` e `sizes`, visando ter um tamanho de imagem adequado para breakpoints inferiores. E isso tem um impacto positivo no desempenho, por carregar imagens menores em telas mobile;
 
 <p align="center">
   <img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658226589/kabum/responsivo_zpvfpp.png" alt="Responsivo" />
 </p>
+
+## 📖 Storybook
+- O Storybook permite a visualização e teste de todos os componentes, com suas respectivas variações, tema claro ou escuro, tamanho de tela mobile, table, fullscreen, etc
+- Você pode testar em [Storybook Kabum](https://github.com/eduardofiorito/kabum-storybook)
 
 ## 📊 Testes
 
