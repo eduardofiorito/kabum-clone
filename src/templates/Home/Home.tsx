@@ -15,7 +15,7 @@ export type HomeProps = {
     description: string;
     ogImage: string;
   };
-  header: Omit<HeaderProps, 'isAuthenticated'>;
+  header: HeaderProps;
   banner: BannerProps;
   mainSection: {
     title: string;
@@ -27,7 +27,7 @@ export type HomeProps = {
   };
   highlightsSection: {
     label: string;
-    highlights: HighlightCardProps[];
+    highlights: ({ id: string } & HighlightCardProps)[];
   };
 };
 
@@ -51,11 +51,7 @@ export function HomeTemplate({
         />
       </Head>
 
-      <Header
-        isAuthenticated={true}
-        user={header.user}
-        departments={header.departments}
-      />
+      <Header user={header.user} departments={header.departments} />
       <main>
         <Banner link={banner.link} alt={banner.alt} srcSet={banner.srcSet} />
 
@@ -74,7 +70,7 @@ export function HomeTemplate({
           <S.HighlightWrapper aria-label={highlightsSection.label}>
             <ul>
               {highlightsSection.highlights.map((highlight) => (
-                <li key={highlight.link}>
+                <li key={highlight.id}>
                   <HighlightCard
                     link={highlight.link}
                     title={highlight.title}

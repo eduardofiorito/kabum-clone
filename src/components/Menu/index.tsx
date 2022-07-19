@@ -58,7 +58,7 @@ export function Menu({ isAuthenticated, username, avatar }: MenuProps) {
           )}
 
           <S.Welcome>
-            Olá. {isAuthenticated ? username : <a href="/">Faça seu login</a>}
+            Olá. {isAuthenticated ? username : <a href="#">Faça seu login</a>}
           </S.Welcome>
         </S.Header>
         <S.Content>
@@ -113,15 +113,15 @@ export function Menu({ isAuthenticated, username, avatar }: MenuProps) {
         </S.Content>
         <S.Footer>
           {isAuthenticated ? (
-            <Button size="large" variant="secondary" as={'a'} href="/">
+            <Button size="large" variant="secondary" as="a" href="#">
               Sair
             </Button>
           ) : (
             <>
-              <Button size="large" variant="secondary" as={'a'} href="/">
+              <Button size="large" variant="secondary" as="a" href="#">
                 Login
               </Button>
-              <Button size="large" variant="primary" as={'a'} href="/">
+              <Button size="large" variant="primary" as="a" href="#">
                 Cadastro
               </Button>
             </>

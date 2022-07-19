@@ -13,8 +13,10 @@ import { useState } from 'react';
 import { Box } from 'components/Icons/Box';
 
 import { handlePrice } from 'utils/product';
+import { useCart } from 'context/CartContext';
 
 export type ProductCardProps = {
+  id: number;
   link: string;
   evaluation?: 0 | 1 | 2 | 3 | 4 | 5 | number;
   imgSrc: string;
@@ -27,6 +29,7 @@ export type ProductCardProps = {
 };
 
 export function ProductCard({
+  id,
   link,
   evaluation = 0,
   imgSrc,
@@ -38,7 +41,7 @@ export function ProductCard({
   openBox = false,
 }: ProductCardProps) {
   const [favorite, setFavorite] = useState(false);
-  const [cart, setCart] = useState(false);
+  const [pressed, setPressed] = useState(false);
 
   const handleEvaluation = (evaluation: number) => {
     const list: React.ReactNode[] = [];
@@ -54,6 +57,8 @@ export function ProductCard({
   const screenReaderDescription = `${name}. De ${handlePrice(
     oldPrice,
   )} R$. Por ${handlePrice(price)}R$.`;
+
+  const { addProduct } = useCart();
 
   return (
     <S.Wrapper>
@@ -102,11 +107,14 @@ export function ProductCard({
           ) : null}
         </S.Info>
       </S.Main>
-      <S.Footer cart={cart}>
+
+      <S.Footer>
         <Button
-          onClick={() => setCart(!cart)}
-          aria-label={!cart ? 'Adicionar ao carrinho' : 'Remover do carrinho'}
-          aria-pressed={cart ? true : false}
+          onClick={() => {
+            addProduct(id, 1);
+            setPressed(!pressed);
+          }}
+          aria-label={'Adicionar ao carrinho'}
           variant="secondary"
           size="small"
           type="button"

@@ -51,13 +51,13 @@ export function Search({
       {!isAuthenticated && (
         <S.List>
           <S.ListItem>
-            <S.ListLink href="/">Playstation 5</S.ListLink>
+            <S.ListLink href="#">Playstation 5</S.ListLink>
           </S.ListItem>
           <S.ListItem>
-            <S.ListLink href="/">i9 extreme</S.ListLink>
+            <S.ListLink href="#">i9 extreme</S.ListLink>
           </S.ListItem>
           <S.ListItem>
-            <S.ListLink href="/">Gtx 3090</S.ListLink>
+            <S.ListLink href="#">Gtx 3090</S.ListLink>
           </S.ListItem>
         </S.List>
       )}

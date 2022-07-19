@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
 
     &:hover {
       box-shadow: rgb(40 41 61 / 4%) 0px 4px 8px,
@@ -256,12 +255,8 @@ export const Tag = styled.span`
   `}
 `;
 
-type CartProps = {
-  cart: boolean;
-};
-
-export const Footer = styled.footer<CartProps>`
-  ${({ theme, cart }) => css`
+export const Footer = styled.footer`
+  ${({ theme }) => css`
     margin-top: ${({ theme }) => theme.spacings.xlarge};
     z-index: 2;
 
@@ -270,8 +265,8 @@ export const Footer = styled.footer<CartProps>`
     }
 
     button {
-      background: ${cart ? theme.colors.secondary : theme.colors.white};
-      color: ${cart ? theme.colors.white : theme.colors.secondary};
+      background: ${theme.colors.secondary};
+      color: ${theme.colors.white};
       border: 2px solid ${theme.colors.secondary};
 
       &:hover {

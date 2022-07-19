@@ -14,9 +14,9 @@ import { Notifications as NotificationsIcon } from 'components/Icons/Notificatio
 
 import { Menu } from 'components/Menu';
 import { Avatar } from 'components/Avatar';
+import { useCart } from 'context/CartContext';
 
 export type HeaderProps = {
-  isAuthenticated: boolean;
   user: {
     name: string;
     adress: string;
@@ -26,14 +26,16 @@ export type HeaderProps = {
     };
   };
   departments: {
-    id: string;
+    id: number;
     name: string;
     link: string;
   }[];
 };
 
-export function Header({ isAuthenticated, user, departments }: HeaderProps) {
+export function Header({ user, departments }: HeaderProps) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isShown, setIsShown] = useState(false);
+  const { quantityProducts } = useCart();
 
   return (
     <S.Header>
@@ -74,18 +76,27 @@ export function Header({ isAuthenticated, user, departments }: HeaderProps) {
                 <S.Username>Olá {user.name}</S.Username>
               ) : (
                 <div>
-                  Faça <S.LinkPrimary href="/">Login</S.LinkPrimary> ou
+                  Faça{' '}
+                  <S.LinkPrimary onClick={() => setIsAuthenticated(true)}>
+                    Login
+                  </S.LinkPrimary>{' '}
+                  ou
                 </div>
               )}
 
               {isAuthenticated ? (
                 <S.LinksAuth>
-                  <S.LinkSecondary href="/">Minha Conta</S.LinkSecondary>|
-                  <S.LinkSecondary href="/">Sair</S.LinkSecondary>
+                  <S.LinkSecondary href="#">Minha Conta</S.LinkSecondary>|
+                  <S.LinkSecondary onClick={() => setIsAuthenticated(false)}>
+                    Sair
+                  </S.LinkSecondary>
                 </S.LinksAuth>
               ) : (
                 <div>
-                  crie seu <S.LinkPrimary href="/">Cadastro</S.LinkPrimary>
+                  crie seu{' '}
+                  <S.LinkPrimary onClick={() => setIsAuthenticated(true)}>
+                    Cadastro
+                  </S.LinkPrimary>
                 </div>
               )}
             </S.UserContent>
@@ -93,16 +104,17 @@ export function Header({ isAuthenticated, user, departments }: HeaderProps) {
 
           <S.Icons>
             {isAuthenticated && (
-              <S.IconLink className="notifications" href="/" title="SAC">
+              <S.IconLink className="notifications" href="#" title="SAC">
                 <NotificationsIcon width={24} height={24} />
               </S.IconLink>
             )}
 
-            <S.IconLink className="favorite" href="/" title="Favoritos">
+            <S.IconLink className="favorite" href="#" title="Favoritos">
               <FavoriteIcon />
             </S.IconLink>
 
-            <S.IconLink className="shopping" href="/" title="Carrinho">
+            <S.IconLink className="shopping" href="#" title="Carrinho">
+              <S.CartBadge>{quantityProducts || 0}</S.CartBadge>
               <ShoppingCartIcon />
             </S.IconLink>
           </S.Icons>
@@ -160,10 +172,10 @@ export function Header({ isAuthenticated, user, departments }: HeaderProps) {
                   </div>
                 </S.NavListItem>
                 <S.NavListItem>
-                  <S.NavLink href="/">Seja prime</S.NavLink>
+                  <S.NavLink href="#">Seja prime</S.NavLink>
                 </S.NavListItem>
                 <S.NavListItem>
-                  <S.NavLink href="/">Central de atendimento</S.NavLink>
+                  <S.NavLink href="#">Central de atendimento</S.NavLink>
                 </S.NavListItem>
               </S.NavList>
             </S.Nav>

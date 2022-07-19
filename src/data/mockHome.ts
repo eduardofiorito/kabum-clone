@@ -4,7 +4,7 @@ import { HighlightCardProps } from 'components/HighlightCard';
 import { ProductCardProps } from 'components/ProductCard';
 
 type Id = {
-  id: string;
+  id: number;
 };
 
 export type DataProps = {
@@ -47,17 +47,17 @@ export const data: DataProps = {
       },
     },
     departments: [
-      { id: '1', name: 'Hardware', link: '/' },
-      { id: '2', name: 'Periféricos', link: '/' },
-      { id: '3', name: 'Games', link: '/' },
-      { id: '4', name: 'Computadores', link: '/' },
-      { id: '5', name: 'Tv', link: '/' },
-      { id: '6', name: 'Celular & Smartphone', link: '/' },
-      { id: '7', name: 'Escritório', link: '/' },
+      { id: 1, name: 'Hardware', link: '#' },
+      { id: 2, name: 'Periféricos', link: '#' },
+      { id: 3, name: 'Games', link: '#' },
+      { id: 4, name: 'Computadores', link: '#' },
+      { id: 5, name: 'Tv', link: '#' },
+      { id: 6, name: 'Celular & Smartphone', link: '#' },
+      { id: 7, name: 'Escritório', link: '#' },
     ],
   },
   banner: {
-    link: '/',
+    link: '#',
     alt: 'Quinzema atômica, são quinze dias de descontos arrasadores, até 47% de desconto. Aproveite.',
     srcSet: {
       xs: 'https://res.cloudinary.com/dtz06cfki/image/upload/v1658149691/kabum/banner360-min_ruifvq.jpg',
@@ -75,8 +75,8 @@ export const data: DataProps = {
     label: 'Produtos na Black Friday',
     products: [
       {
-        id: '1',
-        link: '/',
+        id: 1,
+        link: '#',
         evaluation: 4,
         imgSrc:
           'https://images0.kabum.com.br/produtos/fotos/112990/processador-intel-core-i5-10400-cache-12mb-2-9ghz-lga-1200-bx8070110400_1589200167_m.jpg',
@@ -88,8 +88,8 @@ export const data: DataProps = {
         openBox: false,
       },
       {
-        id: '2',
-        link: '/',
+        id: 2,
+        link: '#',
         evaluation: 5,
         imgSrc:
           'https://images1.kabum.com.br/produtos/fotos/102021/caixa-de-som-gamer-husky-storm-rainbow-6w-usb-cx-hst-ra_caixa-de-som-gamer-husky-storm-rainbow-6w-usb-cx-hst-ra_1565178255_m.jpg',
@@ -101,8 +101,8 @@ export const data: DataProps = {
         openBox: false,
       },
       {
-        id: '3',
-        link: '/',
+        id: 3,
+        link: '#',
         evaluation: 5,
         imgSrc:
           'https://images2.kabum.com.br/produtos/fotos/368232/jogo-god-of-war-ragnar-k-ps5_1657896694_m.jpg',
@@ -114,8 +114,8 @@ export const data: DataProps = {
         openBox: false,
       },
       {
-        id: '4',
-        link: '/',
+        id: 4,
+        link: '#',
         evaluation: 5,
         imgSrc:
           'https://images7.kabum.com.br/produtos/fotos/85197/85197_index_m.jpg',
@@ -127,8 +127,8 @@ export const data: DataProps = {
         openBox: false,
       },
       {
-        id: '5',
-        link: '/',
+        id: 5,
+        link: '#',
         evaluation: 5,
         imgSrc:
           'https://images9.kabum.com.br/produtos/fotos/334039/notebook-asus-amd-ryzen-5-3500u-8gb-ram-ssd-256gb-15-6-radeon-vega-8-windows-11-home-cinza-m515da-br1213w_1651244602_m.jpg',
@@ -140,8 +140,8 @@ export const data: DataProps = {
         openBox: true,
       },
       {
-        id: '6',
-        link: '/',
+        id: 6,
+        link: '#',
         evaluation: 5,
         imgSrc:
           'https://images4.kabum.com.br/produtos/fotos/81454/cadeira-gamer-alpha-gamer-vega-black_1608292452_m.jpg',
@@ -153,8 +153,8 @@ export const data: DataProps = {
         openBox: false,
       },
       {
-        id: '7',
-        link: '/',
+        id: 7,
+        link: '#',
         evaluation: 5,
         imgSrc:
           'https://images0.kabum.com.br/produtos/fotos/334650/monitor-gamer-acer-27-ips-curvo-165-hz-full-hd-1ms-freesync-premium-hdr-400-99-srgb-hdmi-displayport-som-integrado-2x2w-vg271_1651606266_m.jpg',
@@ -166,8 +166,8 @@ export const data: DataProps = {
         openBox: false,
       },
       {
-        id: '8',
-        link: '/',
+        id: 8,
+        link: '#',
         evaluation: 2,
         imgSrc:
           'https://images9.kabum.com.br/produtos/fotos/180539/placa-de-video-gigabyte-geforce-rtx-3060-gaming-oc-12g-12-gb-gddr6-rev-2-0-ray-tracing-gv-3060gaming_1626461646_m.jpg',
@@ -179,8 +179,8 @@ export const data: DataProps = {
         openBox: false,
       },
       {
-        id: '9',
-        link: '/',
+        id: 9,
+        link: '#',
         evaluation: 2,
         imgSrc:
           'https://images9.kabum.com.br/produtos/fotos/156929/notebook-gamer-lenovo-gaming-3i-intel-core-i5-10300h-gtx-1650-4gb-8gb-ram-256gb-ssd-linux-16-9-widescreen-chameleon-blue-82cgs00100_1624476897_m.jpg',
@@ -192,8 +192,8 @@ export const data: DataProps = {
         openBox: true,
       },
       {
-        id: '10',
-        link: '/',
+        id: 10,
+        link: '#',
         evaluation: 2,
         imgSrc:
           'https://images8.kabum.com.br/produtos/fotos/128678/fone-de-ouvido-bluetooth-intra-auricular-klipsch-t5ii-true-wireless-earbuds-recarregavel-resistente-a-agua-gun-metal-t5-ii-gunmetal_1601385419_m.jpg',
@@ -205,8 +205,8 @@ export const data: DataProps = {
         openBox: true,
       },
       {
-        id: '11',
-        link: '/',
+        id: 11,
+        link: '#',
         evaluation: 2,
         imgSrc:
           'https://images5.kabum.com.br/produtos/fotos/168475/teclado-mecanico-gamer-redragon-kumara-rgb-switches-redragon-preto-abnt2-lunar-white-k552w-rgb-pt-black-_1624908513_m.jpg',
@@ -218,8 +218,8 @@ export const data: DataProps = {
         openBox: false,
       },
       {
-        id: '12',
-        link: '/',
+        id: 12,
+        link: '#',
         evaluation: 2,
         imgSrc:
           'https://images7.kabum.com.br/produtos/fotos/155567/memoria-xpg-gammix-d30-8gb-3200mhz-ddr4-cl19-ax4u32008g16a-sb30_1622639642_m.jpg',
@@ -236,8 +236,8 @@ export const data: DataProps = {
     label: 'Destaques',
     highlights: [
       {
-        id: '1',
-        link: '/',
+        id: 1,
+        link: '#',
         title: 'Venda o seu produto',
         description: 'Venda o seu produto usado em nosso marketplace.',
         img: {
@@ -246,8 +246,8 @@ export const data: DataProps = {
         },
       },
       {
-        id: '2',
-        link: '/',
+        id: 2,
+        link: '#',
         title: 'Conheça os produtos prime',
         description: 'Fique por dentro de todos os nossoa benefícios.',
         img: {
@@ -256,8 +256,8 @@ export const data: DataProps = {
         },
       },
       {
-        id: '3',
-        link: '/',
+        id: 3,
+        link: '#',
         title: 'Conheça nossos produtos de leilão',
         description: 'As melhores oportunidades de compra.',
         img: {

@@ -27,31 +27,31 @@ export const data: dataProps = {
   main: [
     {
       id: 1,
-      link: '/',
+      link: '#',
       icon: 'category',
       text: 'Departamentos',
     },
     {
       id: 2,
-      link: '/',
+      link: '#',
       icon: 'user',
       text: 'Minha conta',
     },
     {
       id: 3,
-      link: '/',
+      link: '#',
       icon: 'shopping',
       text: 'Meus pedidos',
     },
     {
       id: 4,
-      link: '/',
+      link: '#',
       icon: 'heart',
       text: 'Favoritos',
     },
     {
       id: 5,
-      link: '/',
+      link: '#',
       icon: 'notifications',
       text: 'Atendimento',
     },
@@ -59,13 +59,13 @@ export const data: dataProps = {
   highlights: [
     {
       id: 6,
-      link: '/',
+      link: '#',
       icon: 'target',
       text: 'Mais procurados',
     },
     {
       id: 7,
-      link: '/',
+      link: '#',
       icon: 'lightning',
       text: 'Acabaram de chegar',
     },
@@ -73,31 +73,31 @@ export const data: dataProps = {
   tags: [
     {
       id: 8,
-      link: '/',
+      link: '#',
       icon: 'tag',
       text: 'Oferta do dia',
     },
     {
       id: 9,
-      link: '/',
+      link: '#',
       icon: 'tag',
       text: 'Lançamentos',
     },
     {
       id: 10,
-      link: '/',
+      link: '#',
       icon: 'tag',
       text: 'Destaques',
     },
     {
       id: 11,
-      link: '/',
+      link: '#',
       icon: 'tag',
       text: 'PC Gamer',
     },
     {
       id: 12,
-      link: '/',
+      link: '#',
       icon: 'tag',
       text: 'Eletrônicos',
     },
@@ -105,19 +105,19 @@ export const data: dataProps = {
   benefits: [
     {
       id: 13,
-      link: '/',
+      link: '#',
       icon: 'star',
       text: 'Seja Prime',
     },
     {
       id: 14,
-      link: '/',
+      link: '#',
       icon: 'credit',
       text: 'Cartão KabuM!',
     },
     {
       id: 15,
-      link: '/',
+      link: '#',
       icon: 'pix',
       text: 'PIX',
     },

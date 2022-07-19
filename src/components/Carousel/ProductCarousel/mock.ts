@@ -1,6 +1,6 @@
 export default [
   {
-    id: '1',
+    id: 1,
     link: '/',
     evaluation: 4,
     imgSrc:
@@ -13,7 +13,7 @@ export default [
     openBox: false,
   },
   {
-    id: '2',
+    id: 2,
     link: '/',
     evaluation: 5,
     imgSrc:
@@ -26,7 +26,7 @@ export default [
     openBox: false,
   },
   {
-    id: '3',
+    id: 3,
     link: '/',
     evaluation: 5,
     imgSrc:
@@ -39,7 +39,7 @@ export default [
     openBox: false,
   },
   {
-    id: '4',
+    id: 4,
     link: '/',
     evaluation: 5,
     imgSrc:
@@ -52,7 +52,7 @@ export default [
     openBox: false,
   },
   {
-    id: '5',
+    id: 5,
     link: '/',
     evaluation: 5,
     imgSrc:
@@ -65,7 +65,7 @@ export default [
     openBox: true,
   },
   {
-    id: '6',
+    id: 6,
     link: '/',
     evaluation: 5,
     imgSrc:
@@ -79,7 +79,7 @@ export default [
   },
 
   {
-    id: '7',
+    id: 7,
     link: '/',
     evaluation: 5,
     imgSrc:
@@ -92,7 +92,7 @@ export default [
     openBox: false,
   },
   {
-    id: '8',
+    id: 8,
     link: '/',
     evaluation: 2,
     imgSrc:
@@ -105,7 +105,7 @@ export default [
     openBox: false,
   },
   {
-    id: '9',
+    id: 9,
     link: '/',
     evaluation: 2,
     imgSrc:
@@ -118,7 +118,7 @@ export default [
     openBox: true,
   },
   {
-    id: '10',
+    id: 10,
     link: '/',
     evaluation: 2,
     imgSrc:
@@ -131,7 +131,7 @@ export default [
     openBox: true,
   },
   {
-    id: '11',
+    id: 11,
     link: '/',
     evaluation: 2,
     imgSrc:
@@ -144,7 +144,7 @@ export default [
     openBox: false,
   },
   {
-    id: '12',
+    id: 12,
     link: '/',
     evaluation: 2,
     imgSrc:

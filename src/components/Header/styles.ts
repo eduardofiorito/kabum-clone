@@ -83,11 +83,12 @@ export const Username = styled.span`
   `}
 `;
 
-export const LinkPrimary = styled.a`
+export const LinkPrimary = styled.button`
   ${({ theme }) => css`
     font-weight: ${theme.font.weight.bold};
     text-decoration: none;
     color: inherit;
+    font-family: inherit;
 
     &:hover {
       text-decoration: underline;
@@ -106,6 +107,7 @@ export const LinkSecondary = styled.a`
   text-decoration: none;
   text-transform: uppercase;
   color: inherit;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
@@ -142,12 +144,33 @@ export const IconLink = styled.a`
     height: 2rem;
     padding: 0.25rem;
     opacity: 0.8;
+    position: relative;
 
     &:hover,
     &focus {
       background-color: ${theme.colors.primary600};
       border-radius: ${theme.spacings.xxs};
     }
+  `}
+`;
+
+export const CartBadge = styled.span`
+  ${({ theme }) => css`
+    background: ${theme.colors.secondary};
+    color: ${theme.colors.white};
+    font-size: ${theme.font.sizes.xs};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 50%;
+    opacity: 1;
+    font-weight: bold;
+    animation: opacity ease-in-out 0.3;
   `}
 `;
 

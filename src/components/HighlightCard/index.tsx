@@ -22,7 +22,13 @@ export function HighlightCard({
         <S.Title>{title}</S.Title>
         <S.Description>{description}</S.Description>
       </S.Wrapper>
-      <S.Image src={img.src} alt={img.alt} loading="lazy" />
+      <S.Image
+        src={img.src}
+        alt={img.alt}
+        width={384}
+        height={167}
+        loading="lazy"
+      />
     </S.Link>
   );
 }

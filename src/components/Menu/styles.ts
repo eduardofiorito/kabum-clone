@@ -96,9 +96,10 @@ export const Welcome = styled.strong`
 
     line-height: 1.5em;
 
-    a {
+    button {
       color: inherit;
       text-decoration: none;
+      font-family: inherit;
 
       &:hover {
         text-decoration: underline;
