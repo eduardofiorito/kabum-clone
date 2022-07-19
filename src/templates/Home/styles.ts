@@ -4,7 +4,7 @@ export const Section = styled.section`
   ${({ theme }) => css`
     background: ${theme.colors.white};
     max-width: ${theme.container2};
-    margin: 0 auto 20rem;
+    margin: 0 auto 6rem;
   `}
 `;
 
@@ -118,4 +118,27 @@ export const HighlightWrapper = styled.section`
       }
     }
   `}
+`;
+
+export const StoryBook = styled.section`
+  ${({ theme }) => css`
+    background: ${theme.colors.gray200};
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 3rem 3rem;
+
+    @media (min-width: ${theme.breakpoints.cm1}) {
+      padding: 4.5rem 4.5rem;
+    }
+  `}
+`;
+
+export const StoryBookLink = styled.a`
+  display: block;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 `;

@@ -82,6 +82,18 @@ export function HomeTemplate({
               ))}
             </ul>
           </S.HighlightWrapper>
+
+          <S.StoryBook>
+            <S.StoryBookLink
+              href="https://kabum-storybook.vercel.app/"
+              target={'_blank'}
+            >
+              <img
+                src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658241809/kabum/storybook_yz2boe.png"
+                alt="Storybook"
+              />
+            </S.StoryBookLink>
+          </S.StoryBook>
         </S.Section>
       </main>
     </>
