@@ -96,7 +96,7 @@ export const Welcome = styled.strong`
 
     line-height: 1.5em;
 
-    button {
+    a {
       color: inherit;
       text-decoration: none;
       font-family: inherit;
