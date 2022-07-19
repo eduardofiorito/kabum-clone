@@ -14,33 +14,38 @@ import { Notifications as NotificationsIcon } from 'components/Icons/Notificatio
 
 import { Menu } from 'components/Menu';
 import { Avatar } from 'components/Avatar';
+import { useCart } from 'context/CartContext';
 
-type HeaderProps = {
-  name?: string;
-  adress?: string;
-  isAuthenticated?: boolean;
-  avatar?: {
-    src: string;
-    alt: string;
+export type HeaderProps = {
+  user: {
+    name: string;
+    adress: string;
+    avatar: {
+      src: string;
+      alt: string;
+    };
   };
+  departments: {
+    id: number;
+    name: string;
+    link: string;
+  }[];
 };
 
-export function Header({
-  name = 'Luis Henrique',
-  adress = 'Rua das Hortências, 295 - Boa Vista - Limeira SP',
-  isAuthenticated = true,
-  avatar = {
-    src: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=36&q=80',
-    alt: '',
-  },
-}: HeaderProps) {
+export function Header({ user, departments }: HeaderProps) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isShown, setIsShown] = useState(false);
+  const { quantityProducts } = useCart();
 
   return (
     <S.Header>
       <S.Container>
         <S.Wrapper>
-          <Menu isAuthenticated={isAuthenticated} />
+          <Menu
+            username={user.name}
+            avatar={user.avatar}
+            isAuthenticated={isAuthenticated}
+          />
 
           <LogoLink />
 
@@ -50,7 +55,7 @@ export function Header({
               <S.Shipping hideOnMobo={true}>
                 <S.Content>
                   <span>Enviar para: </span>
-                  {adress}
+                  {user.adress}
                 </S.Content>
                 <S.ArrowRightIconWrapper>
                   <ArrowRightIcon />
@@ -61,28 +66,37 @@ export function Header({
 
           <S.User>
             {isAuthenticated ? (
-              <Avatar src={avatar.src} alt={avatar.alt} />
+              <Avatar src={user.avatar.src} alt={user.avatar.alt} />
             ) : (
               <Avatar />
             )}
 
             <S.UserContent>
               {isAuthenticated ? (
-                <S.Username>Olá {name}</S.Username>
+                <S.Username>Olá {user.name}</S.Username>
               ) : (
                 <div>
-                  Faça <S.LinkPrimary href="/">Login</S.LinkPrimary> ou
+                  Faça{' '}
+                  <S.LinkPrimary onClick={() => setIsAuthenticated(true)}>
+                    Login
+                  </S.LinkPrimary>{' '}
+                  ou
                 </div>
               )}
 
               {isAuthenticated ? (
                 <S.LinksAuth>
-                  <S.LinkSecondary href="/">Minha Conta</S.LinkSecondary>|
-                  <S.LinkSecondary href="/">Sair</S.LinkSecondary>
+                  <S.LinkSecondary href="#">Minha Conta</S.LinkSecondary>|
+                  <S.LinkSecondary onClick={() => setIsAuthenticated(false)}>
+                    Sair
+                  </S.LinkSecondary>
                 </S.LinksAuth>
               ) : (
                 <div>
-                  crie seu <S.LinkPrimary href="/">Cadastro</S.LinkPrimary>
+                  crie seu{' '}
+                  <S.LinkPrimary onClick={() => setIsAuthenticated(true)}>
+                    Cadastro
+                  </S.LinkPrimary>
                 </div>
               )}
             </S.UserContent>
@@ -90,16 +104,17 @@ export function Header({
 
           <S.Icons>
             {isAuthenticated && (
-              <S.IconLink className="notifications" href="/" title="SAC">
+              <S.IconLink className="notifications" href="#" title="SAC">
                 <NotificationsIcon width={24} height={24} />
               </S.IconLink>
             )}
 
-            <S.IconLink className="favorite" href="/" title="Favoritos">
+            <S.IconLink className="favorite" href="#" title="Favoritos">
               <FavoriteIcon />
             </S.IconLink>
 
-            <S.IconLink className="shopping" href="/" title="Carrinho">
+            <S.IconLink className="shopping" href="#" title="Carrinho">
+              <S.CartBadge>{quantityProducts || 0}</S.CartBadge>
               <ShoppingCartIcon />
             </S.IconLink>
           </S.Icons>
@@ -140,64 +155,27 @@ export function Header({
                     {isShown && (
                       <S.Dropdown id="dropdown">
                         <S.DropdownList>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 1
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 2
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 3
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 4
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 5
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
-                          <li>
-                            <S.DropdownLink href="/">
-                              Item 6
-                              <span>
-                                <ArrowRightIcon />
-                              </span>
-                            </S.DropdownLink>
-                          </li>
+                          {departments &&
+                            departments.map((department) => (
+                              <li key={department.id}>
+                                <S.DropdownLink href={department.link}>
+                                  {department.name}
+                                  <span>
+                                    <ArrowRightIcon />
+                                  </span>
+                                </S.DropdownLink>
+                              </li>
+                            ))}
                         </S.DropdownList>
                       </S.Dropdown>
                     )}
                   </div>
                 </S.NavListItem>
                 <S.NavListItem>
-                  <S.NavLink href="/">Seja prime</S.NavLink>
+                  <S.NavLink href="#">Seja prime</S.NavLink>
                 </S.NavListItem>
                 <S.NavListItem>
-                  <S.NavLink href="/">Central de atendimento</S.NavLink>
+                  <S.NavLink href="#">Central de atendimento</S.NavLink>
                 </S.NavListItem>
               </S.NavList>
             </S.Nav>
@@ -212,7 +190,7 @@ export function Header({
           </S.LocationIconWrapper>
           <S.Content>
             <span>Enviar para: </span>
-            {adress}
+            {user.adress}
           </S.Content>
           <S.ArrowRightIconWrapper>
             <ArrowRightIcon />

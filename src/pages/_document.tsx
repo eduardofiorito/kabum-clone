@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="pt-br">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
@@ -43,6 +43,24 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
             rel="stylesheet"
           />
+          <link rel="icon" href="/assets/favicon.ico" />
+
+          <meta name="author" content="Eduardo Fiorito"></meta>
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="theme-color" content="#0060b1"></meta>
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="#0060b1"
+          ></meta>
+
+          {/* OpenGraph */}
+          <meta property="og:type" content="website" />
+          <meta property="og:locale" content="pt_BR"></meta>
+          <meta property="og:site_name" content="Kabum" />
+
+          {/* Twitter */}
+          <meta name="twitter:site" content="@kabumcombr"></meta>
+          <meta name="twitter:card" content="summary" />
         </Head>
         <body>
           <Main />

@@ -42,7 +42,7 @@ export const Button = styled.button<ButtonSProps>`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  transition: background ease-in 0.3s;
+  transition: background ease-in 0.1s;
   width: 100%;
 
   ${({ theme, size, variant }) => css`

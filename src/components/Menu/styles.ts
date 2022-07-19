@@ -99,6 +99,7 @@ export const Welcome = styled.strong`
     a {
       color: inherit;
       text-decoration: none;
+      font-family: inherit;
 
       &:hover {
         text-decoration: underline;

@@ -9,14 +9,15 @@ import { data } from './mock';
 import { Button } from 'components/Button';
 
 type MenuProps = {
-  isAuthenticated?: boolean;
-  user?: string;
+  isAuthenticated: boolean;
+  username: string;
+  avatar: {
+    src: string;
+    alt: string;
+  };
 };
 
-export function Menu({
-  isAuthenticated = true,
-  user = 'Luis Henrique',
-}: MenuProps) {
+export function Menu({ isAuthenticated, username, avatar }: MenuProps) {
   const [itsOpen, setItsOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null!);
 
@@ -51,16 +52,13 @@ export function Menu({
       <S.Menu id="menu" itsOpen={itsOpen} isAuthenticated={isAuthenticated}>
         <S.Header>
           {isAuthenticated ? (
-            <Avatar
-              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=36&q=80"
-              alt=""
-            />
+            <Avatar src={avatar.src} alt={avatar.alt} />
           ) : (
             <Avatar />
           )}
 
           <S.Welcome>
-            Olá. {isAuthenticated ? user : <a href="/">Faça seu login</a>}
+            Olá. {isAuthenticated ? username : <a href="#">Faça seu login</a>}
           </S.Welcome>
         </S.Header>
         <S.Content>
@@ -115,15 +113,15 @@ export function Menu({
         </S.Content>
         <S.Footer>
           {isAuthenticated ? (
-            <Button size="large" variant="secondary" as={'a'} href="/">
+            <Button size="large" variant="secondary" as="a" href="#">
               Sair
             </Button>
           ) : (
             <>
-              <Button size="large" variant="secondary" as={'a'} href="/">
+              <Button size="large" variant="secondary" as="a" href="#">
                 Login
               </Button>
-              <Button size="large" variant="primary" as={'a'} href="/">
+              <Button size="large" variant="primary" as="a" href="#">
                 Cadastro
               </Button>
             </>
