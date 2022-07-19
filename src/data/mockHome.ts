@@ -29,7 +29,7 @@ export type DataProps = {
   };
 };
 
-export const data: DataProps = {
+export const mock: DataProps = {
   pageInfo: {
     title: 'KaBuM! | Maior E-commerce de Tecnologia e Games da América Latina',
     description:
@@ -241,7 +241,7 @@ export const data: DataProps = {
         title: 'Venda o seu produto',
         description: 'Venda o seu produto usado em nosso marketplace.',
         img: {
-          src: 'https://res.cloudinary.com/dtz06cfki/image/upload/v1658166470/kabum/highlight1_lmqtty.jpg',
+          src: 'https://res.cloudinary.com/dtz06cfki/image/upload/v1658210996/kabum/highlight1-min_k98vry.jpg',
           alt: 'Caixa do Intel Core i7 sob fundo alaranjado',
         },
       },
@@ -251,7 +251,7 @@ export const data: DataProps = {
         title: 'Conheça os produtos prime',
         description: 'Fique por dentro de todos os nossoa benefícios.',
         img: {
-          src: 'https://res.cloudinary.com/dtz06cfki/image/upload/v1658166470/kabum/highlight2_uc5oxg.jpg',
+          src: 'https://res.cloudinary.com/dtz06cfki/image/upload/v1658210996/kabum/highlight2-min_odmosg.jpg',
           alt: 'Ninja do Kabum',
         },
       },
@@ -261,7 +261,7 @@ export const data: DataProps = {
         title: 'Conheça nossos produtos de leilão',
         description: 'As melhores oportunidades de compra.',
         img: {
-          src: 'https://res.cloudinary.com/dtz06cfki/image/upload/v1658166470/kabum/highlights3_sus4vm.jpg',
+          src: 'https://res.cloudinary.com/dtz06cfki/image/upload/v1658210996/kabum/highlights3-min_ourudh.jpg',
           alt: 'Notebook razer com tampa semiaberta',
         },
       },

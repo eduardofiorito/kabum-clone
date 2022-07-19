@@ -1,5 +1,8 @@
 import { HomeProps, HomeTemplate } from 'templates/Home/Home';
-import { data } from 'data/mockHome';
+import { GetStaticProps } from 'next';
+import { api } from 'services/api';
+import { mock } from 'data/mockHome';
+import { ProductCardProps } from 'components/ProductCard';
 
 export default function Home({
   pageInfo,
@@ -21,8 +24,37 @@ export default function Home({
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
+  let products = [] as ProductCardProps[];
+
+  try {
+    const response = await api.get('products');
+    products = response.data;
+  } catch (error) {
+    console.log('error fetch', error);
+  }
+
+  const {
+    pageInfo,
+    header,
+    banner,
+    mainSection,
+    productsSection,
+    highlightsSection,
+  } = mock;
+
   return {
-    props: data,
+    props: {
+      pageInfo,
+      header,
+      banner,
+      mainSection,
+      productsSection: {
+        label: productsSection.label,
+        products: products,
+      },
+      highlightsSection,
+    },
+    revalidate: 40, //40 seconds
   };
-}
+};
