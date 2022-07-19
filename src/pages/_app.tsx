@@ -1,3 +1,4 @@
+import { SkipNavigation } from 'components/SkipNavigation';
 import { CartProvider } from 'context/CartContext';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
@@ -9,6 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <ThemeProvider theme={theme}>
         <CartProvider>
+          <SkipNavigation />
           <GlobalStyle />
           <Component {...pageProps} />
         </CartProvider>

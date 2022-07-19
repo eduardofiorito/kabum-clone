@@ -52,7 +52,8 @@ export function HomeTemplate({
       </Head>
 
       <Header user={header.user} departments={header.departments} />
-      <main>
+
+      <main id="main-content" role="main">
         <Banner link={banner.link} alt={banner.alt} srcSet={banner.srcSet} />
 
         <S.Section>
