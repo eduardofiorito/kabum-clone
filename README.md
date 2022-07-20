@@ -1,21 +1,23 @@
-<h1 align="center"><img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658216725/kabum/kabumlogo_uzu7z5.svg" alt="Kabum" /> 
+<h1 align="center">
+<a href="http://kabum-clone-five.vercel.app/">
+  <img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658323016/capa_bhvp5z.jpg" alt="Kabum" />
+</a>
 </h1>
 
 <p align="center">
-  Você pode testar em <a href="https://kabum-clone-kxoznprz0-eduardofiorito.vercel.app/">Kabum Clone</a>
+  Este projeto foi desenvolvido para o teste de Front-end do KaBuM! Você pode testar em <a href="https://kabum-clone-five.vercel.app" target="_blank">Kabum Clone</a>.
 </p>
 
 <p align="center">
-  <img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658219013/kabum/mockup_imjn4u.png" alt="Mockup Kabum" />
+  <img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658323149/mockup_isk9ug.png" alt="Mockup Kabum" />
 </p>
 
 ## 💻 Projeto
 
-- Este projeto foi desonvoldido para o teste de Front-end do KaBuM!
-- Os dados foram consumidos de uma [mockApi](https://mockapi.io/)
+- Os dados foram consumidos de uma [mockAPI](https://mockapi.io/)
 - Layout base do projeto: [Figma-base](https://www.figma.com/file/XQ1KqEcyYtdw0GRcu4MkPf/kabum-home?node-id=0%3A1)
   - Para construir o responsivo foi criado um rascunho no [Figma](https://www.figma.com/file/fFqF4S10zZvJZqjqlcIXaR/Kabum-Home-(Rascunho)?node-id=0%3A1)
-- Os componentes da aplicação foram documentados e testados com Storybook
+- Os componentes da aplicação foram documentados e testados com [Storybook](http://kabum-storybook.vercel.app/)
 - As etapas de desenvolvimento seguiram um template de TodoList do [Notion](https://silken-message-5cf.notion.site/f6fbdfef9b654d1395f1d274c379674f?v=7ef50b80b1024434829c06a2415cf0a0)
 
 ## ✨ Tecnologias
@@ -63,17 +65,22 @@ Foram utilizadas as seguintes tecnologias:
 
 ## 🚀 Como executar
 
-
+### Clonando o projeto
 ```bash
-# Clonando o projeto
 $ git clone https://github.com/eduardofiorito/kabum-clone.git
-# Entrando no diretório
+```
+### Entrando no diretório
+```bash
 $ cd kabum-clone
-# Instalando as dependências
+```
+### Instalando as dependências
+```bash
 $ yarn
 # ou
 $ npm install
-# Executando o projeto
+```
+### Executando o projeto
+```bash
 $ yarn dev
 # ou
 $ npm run dev
@@ -88,20 +95,20 @@ $ npm run dev
 - `lint`: executa o linter em todos os componentes e páginas
 - `storybook`: executa o storybook no `localhost:6006`
 - `build-storybook`: cria o build do storybook
-- `typecheck`:  typescript verifica as tipagens
+- `typecheck`:  verifica as tipagens do TS
 
 
 ## 📱 Responsivo
 
-- O projeto foi construido pensando em vários tamanhos de dispositivos;
-- No componente Banner foram utilizados os atributos `srcSet` e `sizes`, visando ter um tamanho de imagem adequado para breakpoints inferiores. E isso tem um impacto positivo no desempenho, por carregar imagens menores em telas mobile;
+- O projeto foi construído pensando em vários tamanhos de dispositivos;
+- No componente Banner foram utilizados os atributos `srcSet` e `sizes`, visando ter um tamanho de imagem adequado para breakpoints inferiores. Tendo impacto positivo no desempenho, por carregar imagens menores em telas mobile;
 
 <p align="center">
-  <img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658226589/kabum/responsivo_zpvfpp.png" alt="Responsivo" />
+  <img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658324715/responsivo_m9eoc7.jpg" alt="Responsivo" />
 </p>
 
 ## 📖 Storybook
-- O Storybook permite a visualização e teste de todos os componentes, com suas respectivas variações, tema claro ou escuro, tamanho de tela mobile, table, fullscreen, etc
+- O Storybook permite a visualização e teste de todos os componentes, com suas respectivas variações (tema claro ou escuro, tamanho de tela para mobile, tablet, fullscreen, etc).
 - Você pode testar em [Storybook Kabum](https://kabum-storybook.vercel.app/)
 
 ## 📊 Testes
@@ -172,8 +179,8 @@ $ npm run dev
 
 ### 🔎 SEO
 
-- Foi criado um componente Meta para passar as meta-tags dinâmicas, como meta-descrição, open-graph, twitter, etc... Dentro da criação do template da página.
-- As tags não dinâmicas foram inseridas diretamente no `_document`
+- Foi criado um componente Meta para passar as meta-tags dinâmicas, como: meta-descrição, open-graph, twitter, etc... Dentro da criação do Template da página.
+- As tags não dinâmicas foram inseridas diretamente no `_document.tsx`
 
 <p align="center">
   <img src="https://res.cloudinary.com/dtz06cfki/image/upload/v1658231057/kabum/seo_qbxrit.png" alt="SEO"/>
